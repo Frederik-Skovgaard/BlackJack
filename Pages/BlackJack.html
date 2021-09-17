@@ -15,7 +15,7 @@
 
         <!-- Black Java Title -->
         <div class="BlackTitle">
-            <h1>Black Java</h1>
+            <h1 class="title">Black Java</h1>
         </div>
 
         <!-- Deck Box -->
@@ -23,37 +23,50 @@
             <p id="DeckCount"></p>
         </div>
 
+
         <!-- Player's -->
         <div class="Container">
-            <div class="row">
-
-                <!-- Player boxes -->
-                <div class="col PlayerBox">
-
-                    <!-- Player card box -->
-                    <div class="row">
-                    </div>
-                </div>
-
-
-                <!-- Player boxes -->
-                <div class="col PlayerBox">
-
-                    <!-- Player card box -->
-                    <div class="row">
-                    </div>
-                </div>
-            </div>
-
 
             <!-- Button Group -->
             <div class="btn-group">
-                <button class="btn btn-primary">Restart</button>
-                <button class="btn btn-primary">Hit me</button>
-                <button class="btn btn-primary">Stay</button>
+                 <button class="btn btn-primary">Restart</button>
+                 <button class="btn btn-primary curv">Hit me</button>
+                 <button class="btn btn-primary curv">Stay</button>
             </div>
 
+            <div class="row playerRow">
 
+                <!-- Player boxes -->
+                <div class="col PlayerBox">
+                    <h3 class="Display-2">Player 1</h3>
+                    
+                    <!-- Player card box -->
+                    <div class="row">
+                        <div id="PlayerOneCards" class="col CardBox">
+                            
+                        </div>
+                    </div>
+
+                    <h1 id="Player1Score" class="Display-2">0</h1>
+
+                </div>
+
+
+                <!-- Player boxes -->
+                <div class="col PlayerBox">
+                    <h3 class="Display-2">Player 2</h3>
+
+                    <!-- Player card box -->
+                    <div class="row">
+                        <div id="PlayerTwoCards" class="col CardBox">
+                            
+                        </div>
+                    </div>
+
+                    <h1 id="Player2Score" class="Display-2">0</h1>
+
+                </div>
+            </div>
         </div>
     </div>
 </body>

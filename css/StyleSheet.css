@@ -1,0 +1,56 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+body {
+    background: darkgreen !important;
+    color: white !important;
+}
+
+
+.BlackJava .BlackTitle {
+    text-align: center;
+    background-color: #000000a3;
+    height: 5rem;
+}
+.BlackJava .BlackTitle .title {
+    line-height: 70px;
+    font-weight: 600;
+}
+
+.BlackJava .Container {
+    text-align: center;
+}
+.BlackJava .Container .btn-group {
+    margin-bottom: 2rem;
+    width: 30rem;
+}
+.BlackJava .Container .btn-group .btn-primary {
+    border: solid;
+    border-radius: 2rem;
+    border-color: darkgreen;
+    background-color: #0000007d;
+
+    transition: background-color 0.5s;
+}
+    .BlackJava .Container .btn-group .btn-primary:hover {
+        background-color: black;
+    }
+.BlackJava .Container .btn-group .curv {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+.BlackJava .Container .PlayerBox {
+    text-align: center;
+    border: solid 5px #00000054;
+    height: auto;
+    border-radius: 55px;
+    margin-left: 5rem;
+    box-shadow: 12px 12px 5px 0px #19161647;
+}
+.BlackJava .Container .playerRow {
+    margin: 0 auto;
+    width: 50rem;
+}
