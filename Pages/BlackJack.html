@@ -19,78 +19,50 @@
 
             <!-- left score -->
             <p class="Playerscore1">Player 1: </p>
+            <p id="PlayerScore-1" class="ScoreP">0</p>
             <p class="Playerscore1">Player 2: </p>
+            <p id="PlayerScore-2" class="ScoreP">0</p>
 
             <!-- Right score -->
+            <p id="PlayerScore-4" class="ScorePRight">0</p>
             <p class="Playerscore2">Player 4: </p>
+            <p id="PlayerScore-3" class="ScorePRight">0</p>
             <p class="Playerscore2">Player 3: </p>
+            
         </div>
-
-        <!-- Deck Box -->
-        <div class="DeckBox">
-            <p id="DeckCount"></p>
-        </div>
-
 
         <!-- Player's -->
         <div class="Container">
 
             <!-- Button Group -->
             <div class="btn-group">
-                 <button class="btn btn-primary">Restart</button>
-                 <button class="btn btn-primary curv">Hit me</button>
-                 <button class="btn btn-primary curv">Stay</button>
+                 <button id="restartBTN" onclick="startBlackJack()" value="start" class="btn btn-primary">Restart</button>
+                 <button onclick="hitMe()"  class="btn btn-primary curv">Hit me</button>
+                 <button onclick="stay()" class="btn btn-primary curv">Stay</button>
             </div>
+
+
 
             <div class="row playerRow">
 
                 <!-- Player boxes -->
-                <div class="col PlayerBox">
-                    <h3 class="Display-2">Player 1</h3>
+                <div class="col-3 PlayerBox">
+                    <h3 class="Display-2 playername">Player 1</h3>
                     
                     <!-- Player card box -->
                     <div class="row">
-                        <div id="PlayerOneCards" class="col CardBox">
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Player boxes -->
-                <div class="col PlayerBox">
-                    <h3 class="Display-2">Player 2</h3>
-
-                    <!-- Player card box -->
-                    <div class="row">
-                        <div id="PlayerTwoCards" class="col CardBox">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Player boxes -->
-                <div class="col PlayerBox">
-                    <h3 class="Display-2">Player3</h3>
-
-                    <!-- Player card box -->
-                    <div class="row">
-                        <div id="PlayerTwoCards" class="col CardBox">
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Player boxes -->
-                <div class="col PlayerBox">
-                    <h3 class="Display-2">Player 4</h3>
-
-                    <!-- Player card box -->
-                    <div class="row">
-                        <div id="PlayerTwoCards" class="col CardBox">
-                            
+                        <div id="PlayerHand-" class="col CardBox">
+                            <img id="hand-" class="DeckImg" />
+                            <img class="DeckImg" />
+                            <img class="DeckImg" />
                         </div>
                     </div>
                 </div>
             </div>
+             <!-- Deck Box -->
+              <div class="DeckBox">
+                    <p id="DeckCount" class="DeckText">52</p>
+             </div>
         </div>
     </div>
 </body>

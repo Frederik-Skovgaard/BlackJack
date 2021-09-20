@@ -8,7 +8,33 @@ body {
     font-family: sans-serif !important;
 }
 
+.BlackJava .Container .DeckBox {
+    background: url(/Imges/CardBack.jpg);
+    background-repeat: no-repeat;
+    height: 14rem;
+    background-size: 10rem;
+    background-position: center;
+    border: solid #ffffff00;
+    width: 10rem;
+    border-radius: 1rem;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+}
 
+.BlackJava .Container .DeckBox .DeckText {
+    margin-top: 4.7rem !important;
+    color: #ffffff;
+    font-size: 3rem;
+    border: solid 4px #004300;
+    width: 5rem;
+    background: black;
+    margin: 0 auto;
+    border-radius: 23px;
+    height: 4rem;
+    padding: 0;
+    line-height: 56px;
+}
 .BlackJava .BlackTitle {
     text-align: center;
     background-color: #000000a3;
@@ -16,15 +42,27 @@ body {
 }
 .BlackJava .BlackTitle .Playerscore1 {
     float: left;
-    margin-right: 5rem;
+    margin-right: 1rem;
     margin-left: 5rem;
+    font-size: 25px;
+}
+.BlackJava .BlackTitle .ScoreP {
+    float: left;
+    line-height: 38px;
     font-size: 25px;
 }
 .BlackJava .BlackTitle .Playerscore2 {
     float: right;
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-right: 1rem;
+    margin-left: 1.5rem;
     font-size: 25px;
+
+}
+.BlackJava .BlackTitle .ScorePRight {
+    float: right;
+    line-height: 38px;
+    font-size: 25px;
+    margin-right: 4rem;
 }
 
 .BlackJava .BlackTitle .title {
@@ -39,7 +77,7 @@ body {
 .BlackJava .Container .btn-group {
     margin-bottom: 2rem;
     width: 30rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 .BlackJava .Container .btn-group .btn-primary {
     border: solid;
@@ -57,19 +95,31 @@ body {
     border-bottom-left-radius: 0;
 }
 
+.BlackJava .Container .playername {
+    border-bottom: solid #004300;
+}
 
 .BlackJava .Container .PlayerBox {
-    text-align: center;
     border: solid 5px #00000054;
     height: 25rem;
     border-radius: 55px;
-    margin-left: 2.5rem;
+    margin-left: 1.5rem;
     box-shadow: 12px 12px 5px 0px #19161647;
-    margin-right: 2.5rem;
+    margin-right: 1.5rem;
     padding: 1rem;
+    width: 21%;
 }
+.BlackJava .Container .PlayerBox .DeckImg {
+    background: url(/Imges/Clover-10.png);
+    height: 5.9rem;
+    width: 4.3rem;
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    border: solid 2px #ffffff00;
+    border-radius: 12px;
+}
+
 .BlackJava .Container .playerRow {
-    margin: 0 auto;
-    width: 90rem;
-    margin-top: 3rem;
+    place-content: center;
+    width: 100%;
 }
