@@ -5,6 +5,7 @@
 body {
     background: darkgreen !important;
     color: white !important;
+    font-family: sans-serif !important;
 }
 
 
@@ -13,9 +14,23 @@ body {
     background-color: #000000a3;
     height: 5rem;
 }
+.BlackJava .BlackTitle .Playerscore1 {
+    float: left;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    font-size: 25px;
+}
+.BlackJava .BlackTitle .Playerscore2 {
+    float: right;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    font-size: 25px;
+}
+
 .BlackJava .BlackTitle .title {
-    line-height: 70px;
+    line-height: 76px;
     font-weight: 600;
+    height: 2.3rem;
 }
 
 .BlackJava .Container {
@@ -24,6 +39,7 @@ body {
 .BlackJava .Container .btn-group {
     margin-bottom: 2rem;
     width: 30rem;
+    margin-top: 1rem;
 }
 .BlackJava .Container .btn-group .btn-primary {
     border: solid;
@@ -45,12 +61,15 @@ body {
 .BlackJava .Container .PlayerBox {
     text-align: center;
     border: solid 5px #00000054;
-    height: auto;
+    height: 25rem;
     border-radius: 55px;
-    margin-left: 5rem;
+    margin-left: 2.5rem;
     box-shadow: 12px 12px 5px 0px #19161647;
+    margin-right: 2.5rem;
+    padding: 1rem;
 }
 .BlackJava .Container .playerRow {
     margin: 0 auto;
-    width: 50rem;
+    width: 90rem;
+    margin-top: 3rem;
 }
