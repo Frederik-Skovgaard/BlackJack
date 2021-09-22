@@ -4,9 +4,11 @@
     margin: 0%;
 }
 body {
-    background: darkgreen !important;
-    color: white !important;
-    font-family: sans-serif !important;
+    background: url(/Imges/background-2.jpg) !important;
+    color: #28c755 !important; 
+    font-family: monospace !important;
+    background-size: 106.7rem !important;
+    background-position-y: -4rem !important;
 }
 
 
@@ -27,16 +29,16 @@ body {
 /* -------------Title------------- */
 .BlackJava .BlackTitle .form-control {
     padding: 0;
-    background-color: #003300;
-    border: solid 2px #004300;
+    background-color: #232323;
+    border: solid 2px #24ab4c;
     border-radius: 0px;
-    width: 40px;
+    width: 50px;
     margin: 0 auto;
     height: 40px;
-    font-size: 20px;
-    padding-left: 13px;
+    padding-left: 15px;
     padding-top: 2px;
-    color: white;
+    color: #41c568;
+    font-size: 25px;
 }
 .BlackJava .BlackTitle .form-control:focus {
     outline: none;
@@ -54,12 +56,17 @@ body {
     margin-left: 5rem !important;
 }
 .BlackJava .BlackTitle .boxShow .btn {
-    display: inline-block;
-    background: #0000003d;
+    font-weight: 600;
+    border-radius: 20px;
+    background: #0d0d0d;
     border: none;
+    color: #25ac4d;
+    transition: background 0.5s, color 0.5s;
+    border-bottom-right-radius: 0;
 }
 .BlackJava .BlackTitle .boxShow .btn:hover {
-    background: black;
+    background: #25ac4d;
+    color: black;
 }
 .BlackJava .BlackTitle .boxShow .btn:focus {
     outline: none;
@@ -68,34 +75,56 @@ body {
 .BlackJava .BlackTitle {
     background-color: #000000a3;
     height: 6rem;
+    margin: 0 auto;
+    border-bottom: solid 5px #25ac4d;
 }
 .BlackJava .BlackTitle .title {
     line-height: 88px;
     font-weight: 600;
     height: 0;
-    text-align: center;
+    margin: 0 auto;
+    width: 17rem;
+    color: #28c755;
+    font-size: 3rem;
+
 }
 .BlackJava .BlackTitle .box {
-    height: 16rem;
-    width: 20rem;
+    height: 21.1rem;
+    width: 23rem;
     margin: 0 auto;
     text-align: center;
     margin-top: 15rem;
-    background: #002400;
-    padding: 2vh;
-    border: solid 10px #000000ab;
-    border-radius: 15px;
+    background: #24ae4e;
+    padding: 3vh;
+    border: solid 8px #181818;
+    border-radius: 29px;
+    color: #41c568;
+    font-weight: 700;
 }
 .BlackJava .BlackTitle .box .btn {
-    display: inline-block;
-    background: #0000003d;
+    background: #24ae4e;
     border: none;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    
+    color: #232323;
+    transition: color 0.5s, background 0.5s;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 26px;
+    border-top-right-radius: 0;
+
+    transition: color 0.5s, background 0.5s;
 }
 .BlackJava .BlackTitle .box .btn:hover {
-    background:black;
+    background:#2d2a2a;
+    color: #24ab4c;
+}
+.BlackJava .BlackTitle .box .formBox {
+    border-radius: 21px;
+    padding: 1vh;
+    background: #232323;
+    height: 17rem;
+    border: solid #292f2b 8px;
 }
 
 
@@ -112,26 +141,30 @@ body {
 }
 .BlackJava .Container .boxWin {
     width: 19rem;
-    font-size: 30px ;
-    margin: 0 auto ;
-    border: double #0000005e 14px ;
-    padding: 0.2rem  !important;
-    margin-bottom: 2rem ;
-    box-shadow: inset 1px 1px 20px 0px #62ff00 ;
-    color: lime;
+    font-size: 30px;
+    margin: 0 auto;
+    border: double #0000005e 14px;
+    padding: 0.2rem !important;
+    margin-bottom: 2rem;
+    box-shadow: 0px 0px 20px 0px #65f58f;
+    color: #3def71;
     font-weight: 900;
+    border-color: #00ff95;
+    border-radius: 20px;
 }
 .BlackJava .Container .boxLoss {
-    width: 17rem ;
-    font-size: 30px ;
-    margin: 0 auto ;
-    border: double #0000005e 14px ;
-    padding: 0.2rem ;
-    color: #ff0000d9 ;
-    box-shadow: inset 1px 1px 20px 0px #ff0000 ;
+    width: 17rem;
+    font-size: 30px;
+    margin: 0 auto;
+    border: double #0000005e 14px;
+    padding: 0.2rem;
+    color: #e80606;
+    box-shadow: 1px 1px 20px 6px #9c0000;
     font-weight: 900;
     margin-bottom: 2rem;
     height: 5rem;
+    border-color: #ff0000;
+    border-radius: 20px;
 }
 .BlackJava .Container .btn-group {
     margin-bottom: 2rem;
@@ -139,25 +172,28 @@ body {
     margin-top: 1rem;
 }
 .BlackJava .Container .btn-group .btn-primary {
-    border: solid;
+    border: solid 3px;
     border-radius: 2rem;
-    border-color: darkgreen;
+    border-color: #23a94a;
     background-color: #0000007d;
+    font-weight: 600;
+    color: #41c568;
 
-    transition: background-color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
 }
     .BlackJava .Container .btn-group .btn-primary:hover {
-        background-color: black;
+        background-color: #24ab4c;
+        color: black;
     }
 .BlackJava .Container .btn-group .curv {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 .BlackJava .Container .playername {
-    border-bottom: solid #004300;
+    border-bottom: solid #24ab4c;
 }
 .BlackJava .Container .PlayerBox {
-    border: solid 5px #00000054;
+    border: solid 5px #23a94a;
     height: 28rem;
     border-radius: 55px;
     margin-left: 1.5rem;
@@ -166,10 +202,11 @@ body {
     padding: 1rem;
     width: 21%;
     margin-bottom: 3rem;
+    background: #222222;
 }
 .BlackJava .Container .PlayerBox .ScoreStyling {
     font-size: 1.75rem;
-    border-top: solid #004300;
+    border-top: solid #24ab4c;
 }
 .BlackJava .Container .PlayerBox .row {
     height: 20rem;
@@ -190,7 +227,8 @@ body {
     margin: 0;
 }
 .BlackJava .Container .playerRow .active {
-    box-shadow: 0px 0px 0px 10px #00ff32;
+    box-shadow: 0px 0px 0px 10px #2adc5f;
+    border-color: transparent;
 }
 .BlackJava .Container .DeckBox {
     background: url(/Imges/CardBack.jpg);
@@ -209,9 +247,9 @@ body {
     margin-top: 4.7rem !important;
     color: #ffffff;
     font-size: 3rem;
-    border: solid 4px #004300;
+    border: solid 4px #24aa4c;
     width: 5rem;
-    background: black;
+    background: #222222;
     margin: 0 auto;
     border-radius: 23px;
     height: 4rem;

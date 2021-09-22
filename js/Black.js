@@ -6,7 +6,8 @@ var players = new Array();
 var currentPlayer = 0;
 var playerCount;
 
-//------------------------Functions-----------------------//
+
+//------------------------Talk-About-Functions-----------------------//
 
 //Run's threw the arrays & puts them inside the deck array.
 function createDeck() {
@@ -27,18 +28,6 @@ function createDeck() {
             var card = {Value: values[i], Suit: symbols[x], Weight: Weight, ID: indexCounter};
             deck.push(card);
         } 
-    }
-}
-
-//Give's the player array id, point's & hand array parameter
-function createPlayer(num) {
-    players = new Array();
-    for(var i = 1; i <= num; i++)
-    {
-        var hand = new Array();
-        var player = {Name: "Player " + i, ID: i, Points: 0, Hand: hand};
-        players.push(player);
-
     }
 }
 
@@ -130,12 +119,6 @@ function dealHands() {
     updateDeck();
 }
 
-//Create the card
-function renderCard(card, player) {
-    var hand = document.getElementById("PlayerHand-" + player);
-    hand.appendChild(getCardUI(card));
-}
-
 //Get the card image
 function getCardUI(card) {
     var cardImg = document.createElement("img");
@@ -207,32 +190,6 @@ function getCardUI(card) {
     return cardImg;
 }
 
-//Takes the player's cards weight(value) and returns them
-function getPoints(player) {
-    var points = 0;
-    for(var i = 0; i < players[player].Hand.length; i++) 
-    {
-        points += players[player].Hand[i].Weight;
-    }
-    players[player].Points = points;
-    return points;
-}
-
-//Change the score in the player box
-function updatePoints()
-{
-    for(var i = 0; i < players.length; i++)
-    {
-        getPoints(i);
-        document.getElementById("Score-" + i).innerHTML = players[i].Points;
-    }
-}
-
-//Change the nummber of cards left in the deck
-function updateDeck() {
-    document.getElementById("DeckCount").innerHTML = deck.length;
-}
-
 //Give the current player a card
 function hitMe() {
     var card = deck.pop();
@@ -275,8 +232,84 @@ function end() {
     document.getElementById("hitMeBTN").disabled = true;
     document.getElementById("stayBTN").disabled = true;
 
-    document.getElementById("status").innerHTML = "Winner: Player " + players[winner].ID;
+    document.getElementById("status").innerHTML = "Player " + players[winner].ID + " Won!";
     document.getElementById("status").className = "boxWin";
+}
+
+//Takes the player's cards weight(value) and returns them
+function getPoints(player) {
+    var points = 0;
+    for(var i = 0; i < players[player].Hand.length; i++) 
+    {
+        points += players[player].Hand[i].Weight;
+    }
+    players[player].Points = points;
+    return points;
+}
+
+//Change the score in the player box
+function updatePoints()
+{
+    for(var i = 0; i < players.length; i++)
+    {
+        getPoints(i);
+        document.getElementById("Score-" + i).innerHTML = players[i].Points;
+    }
+}
+
+//Validation
+function validateForm() {
+    let numberText = document.forms["multiplayer"]["numsub"].value;
+    let text;
+
+    if (numberText == "")
+    {
+        text = "* Players must be filled out";
+        document.getElementById("validator").innerHTML = text;
+        document.getElementById("restartBTN").disabled = true;
+        return false;
+    }
+    else if (isNaN(numberText) || numberText < 2 || numberText > 10) 
+    {
+        text = "* Input can't be under 2 or above 10"
+        document.getElementById("validator").innerHTML = text;
+        document.getElementById("restartBTN").disabled = true;
+        return false;
+    }
+    else
+    {
+        document.getElementById("validator").innerHTML = "";
+        document.getElementById("restartBTN").disabled = false;
+        playerCount = numberText;
+        return false;
+    }
+}
+
+
+
+//------------------------Functions-But-Not-Interesting-----------------------//
+
+//Change the nummber of cards left in the deck
+function updateDeck() {
+    document.getElementById("DeckCount").innerHTML = deck.length;
+}
+
+//Create the card
+function renderCard(card, player) {
+    var hand = document.getElementById("PlayerHand-" + player);
+    hand.appendChild(getCardUI(card));
+}
+
+//Give's the player array id, point's & hand array parameter
+function createPlayer(num) {
+    players = new Array();
+    for(var i = 1; i <= num; i++)
+    {
+        var hand = new Array();
+        var player = {Name: "Player " + i, ID: i, Points: 0, Hand: hand};
+        players.push(player);
+
+    }
 }
 
 //Check if any of the players have over 21 points if so declare them losser
@@ -296,30 +329,3 @@ function reload() {
     window.location.reload();
 }
 
-//Validation
-function validateForm() {
-    let numberText = document.forms["multiplayer"]["numsub"].value;
-    let text;
-
-    if (numberText == "")
-    {
-        text = "* Players must be filled out";
-        document.getElementById("validator").innerHTML = text;
-        return false;
-    }
-    else if (isNaN(numberText) || numberText < 2 || numberText > 10) 
-    {
-        text = "* Input can't be under 2 or above 10"
-        document.getElementById("validator").innerHTML = text;
-        return false;
-    }
-    else
-    {
-        document.getElementById("validator").innerHTML = "";
-        document.getElementById("restartBTN").disabled = false;
-        playerCount = numberText;
-        return false;
-    }
-
-    
-}
