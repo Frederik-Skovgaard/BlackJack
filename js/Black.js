@@ -1,16 +1,20 @@
-var suits = ["Diamond", "Spade", "Clover", "Heart"];
+//------------------------Varibles-----------------------//
+var symbols = ["Diamond", "Spade", "Clover", "Heart"];
 var values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 var deck = new Array();
 var players = new Array();
 var currentPlayer = 0;
 var playerCount;
 
+//------------------------Functions-----------------------//
+
+//Run's threw the arrays & puts them inside the deck array.
 function createDeck() {
     deck = new Array();
     var indexCounter = 0;
     for (var i = 0; i < values.length; i++)
     {
-        for (var x = 0; x < suits.length; x++)
+        for (var x = 0; x < symbols.length; x++)
         {
             var Weight = parseInt(values[i]);
             if(values[i] == "J" || values[i] == "Q" || values[i] == "K")
@@ -20,12 +24,13 @@ function createDeck() {
 
             indexCounter++;
 
-            var card = {Value: values[i], Suit: suits[x], Weight: Weight, ID: indexCounter};
+            var card = {Value: values[i], Suit: symbols[x], Weight: Weight, ID: indexCounter};
             deck.push(card);
         } 
     }
 }
 
+//Give's the player array id, point's & hand array parameter
 function createPlayer(num) {
     players = new Array();
     for(var i = 1; i <= num; i++)
@@ -37,6 +42,7 @@ function createPlayer(num) {
     }
 }
 
+//Creates the player box for the score, name & cards 
 function createPlayerUI() {
     document.getElementById("playerRow").innerHTML = "";
     for(var i = 0; i < players.length; i++)
@@ -73,6 +79,7 @@ function createPlayerUI() {
     }
 }
 
+//Starts the game by running the listet methods
 function startBlackJack() {
     document.getElementById("ShowPlayercount").style.display = "inline-block";
     document.getElementById("TextShow").style.display = "block";
@@ -95,6 +102,7 @@ function startBlackJack() {
     document.getElementById("PlayerBox-" + currentPlayer).classList.add("active");
 }
 
+//Take's the decks length * with a random, then switches them around, to simulate random.
 function shuffle() {
     for (var i = deck.length - 1; i > 0; i--)
     {
@@ -106,7 +114,7 @@ function shuffle() {
     
 }
 
-
+//For every player deal a card
 function dealHands() {
     for(var i = 0; i < 2; i++)
     {
@@ -122,11 +130,13 @@ function dealHands() {
     updateDeck();
 }
 
+//Create the card
 function renderCard(card, player) {
     var hand = document.getElementById("PlayerHand-" + player);
     hand.appendChild(getCardUI(card));
 }
 
+//Get the card image
 function getCardUI(card) {
     var cardImg = document.createElement("img");
     var imgPath = "/Imges/"
@@ -193,14 +203,11 @@ function getCardUI(card) {
 
     cardImg.style.backgroundImage = "url('" + imgPath + ".png')";
 
-    
-        
-    
-
     cardImg.className = "DeckImg";
     return cardImg;
 }
 
+//Takes the player's cards weight(value) and returns them
 function getPoints(player) {
     var points = 0;
     for(var i = 0; i < players[player].Hand.length; i++) 
@@ -211,6 +218,7 @@ function getPoints(player) {
     return points;
 }
 
+//Change the score in the player box
 function updatePoints()
 {
     for(var i = 0; i < players.length; i++)
@@ -220,10 +228,12 @@ function updatePoints()
     }
 }
 
+//Change the nummber of cards left in the deck
 function updateDeck() {
     document.getElementById("DeckCount").innerHTML = deck.length;
 }
 
+//Give the current player a card
 function hitMe() {
     var card = deck.pop();
     players[currentPlayer].Hand.push(card);
@@ -233,6 +243,7 @@ function hitMe() {
     check();
 }
 
+//If is isen't the last player remove active class and add it to the other player else end the game
 function stay() {
     if (currentPlayer != players.length-1) 
     {
@@ -246,6 +257,7 @@ function stay() {
     }
 }
 
+//Looks who has the closes't to 21 point's & declare them winner
 function end() {
     var winner = -1
     var score = 0;
@@ -267,6 +279,7 @@ function end() {
     document.getElementById("status").className = "boxWin";
 }
 
+//Check if any of the players have over 21 points if so declare them losser
 function check() {
     if (players[currentPlayer].Points > 21)
     {
@@ -278,13 +291,10 @@ function check() {
     }
 }
 
-
-
 //Reaload site
 function reload() {
     window.location.reload();
 }
-
 
 //Validation
 function validateForm() {

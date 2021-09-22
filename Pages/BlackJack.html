@@ -17,6 +17,8 @@
         <div class="BlackTitle">
             <h1 class="title">Black Java</h1>
             <div id="box" class="box">
+
+                <!-- Select player amount & validate -->
                 <form name="multiplayer" id="formblock" onsubmit="return validateForm()" method="post">
                     <p style="font-size: 27px; margin: 0%;">Amount of players</p>
                     <p>Play between 2 and 10 players!</p>
@@ -25,6 +27,7 @@
                     <p style="color: red !important; "id="validator"></p>
                 </form>
 
+                 <!-- Show btn to reload page -->
                 <input class="btn btn-primary" style="display: none;" onclick="reload()" type="submit" value="Show" id="ShowPlayercount" />
                 <p style="display: none;" id="TextShow">Back to player selection</p>
             </div>
@@ -35,21 +38,20 @@
         
             <!-- Button Group -->
             <div class="btn-group">
+
+                <!-- Start, hit me & stay btns -->
                  <input type="button" disabled id="restartBTN" class="btn btn-primary" value="Start" onclick="startBlackJack()"></input>
                  <input type="button" disabled id="hitMeBTN" class="btn btn-primary curv" value="Hit me" onclick="hitMe()"></input>
                  <input type="button" disabled id="stayBTN" class="btn btn-primary curv" value="Stay" onclick="stay()"></input>
             </div>
 
-            <!-- Status -->
+            <!-- Won or Lost -->
             <div id="status" class="box">
             </div>
 
 
             <!-- Add players here -->
             <div id="playerRow" class="row playerRow">
-
-                
-                
             </div>
 
 
