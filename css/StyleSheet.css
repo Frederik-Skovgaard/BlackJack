@@ -36,48 +36,80 @@ body {
     line-height: 56px;
 }
 .BlackJava .BlackTitle {
-    text-align: center;
     background-color: #000000a3;
-    height: 5rem;
-}
-.BlackJava .BlackTitle .Playerscore1 {
-    float: left;
-    margin-right: 1rem;
-    margin-left: 5rem;
-    font-size: 25px;
-}
-.BlackJava .BlackTitle .ScoreP {
-    float: left;
-    line-height: 38px;
-    font-size: 25px;
-}
-.BlackJava .BlackTitle .Playerscore2 {
-    float: right;
-    margin-right: 1rem;
-    margin-left: 1.5rem;
-    font-size: 25px;
-
-}
-.BlackJava .BlackTitle .ScorePRight {
-    float: right;
-    line-height: 38px;
-    font-size: 25px;
-    margin-right: 4rem;
+    height: 6rem;
 }
 
 .BlackJava .BlackTitle .title {
-    line-height: 76px;
+    line-height: 88px;
     font-weight: 600;
-    height: 2.3rem;
+    height: 0;
+    text-align: center;
 }
 
 .BlackJava .Container {
     text-align: center;
 }
+.BlackJava .BlackTitle .box {
+    height: 16rem;
+    width: 20rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15rem;
+    background: #002400;
+    padding: 2vh;
+    border: solid 10px #000000ab;
+    border-radius: 15px;
+}
+.BlackJava .BlackTitle .box .btn {
+    display: inline-block;
+    background: #0000003d;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+.BlackJava .BlackTitle .box .btn:hover {
+    background:black;
+}
+
+.BlackJava .Container .box {
+    width: 17rem;
+    height: 5rem;
+    color: transparent;
+    border-color: transparent;
+    margin-bottom: 2rem;
+}
+
+.BlackJava .Container .boxWin {
+    width: 19rem;
+    font-size: 30px ;
+    margin: 0 auto ;
+    border: double #0000005e 14px ;
+    padding: 0.2rem  !important;
+    margin-bottom: 2rem ;
+    box-shadow: inset 1px 1px 20px 0px #62ff00 ;
+    color: lime;
+    font-weight: 900;
+}
+
+.BlackJava .Container .boxLoss {
+    width: 17rem ;
+    font-size: 30px ;
+    margin: 0 auto ;
+    border: double #0000005e 14px ;
+    padding: 0.2rem ;
+    color: #ff0000d9 ;
+    box-shadow: inset 1px 1px 20px 0px #ff0000 ;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    height: 5rem;
+}
+
 .BlackJava .Container .btn-group {
     margin-bottom: 2rem;
     width: 30rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 .BlackJava .Container .btn-group .btn-primary {
     border: solid;
@@ -101,13 +133,22 @@ body {
 
 .BlackJava .Container .PlayerBox {
     border: solid 5px #00000054;
-    height: 25rem;
+    height: 28rem;
     border-radius: 55px;
     margin-left: 1.5rem;
     box-shadow: 12px 12px 5px 0px #19161647;
     margin-right: 1.5rem;
     padding: 1rem;
     width: 21%;
+    margin-bottom: 3rem;
+}
+.BlackJava .Container .PlayerBox .ScoreStyling {
+    font-size: 1.75rem;
+    border-top: solid #004300;
+}
+
+.BlackJava .Container .PlayerBox .row {
+    height: 20rem;
 }
 .BlackJava .Container .PlayerBox .DeckImg {
     background: url(/Imges/Clover-10.png);
@@ -122,4 +163,78 @@ body {
 .BlackJava .Container .playerRow {
     place-content: center;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
+.BlackJava .Container .playerRow .active {
+    box-shadow: 0px 0px 0px 10px #00ff32;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.BlackJava .BlackTitle .form-control {
+    padding: 0;
+    background-color: #003300;
+    border: solid 2px #004300;
+    border-radius: 0px;
+    width: 40px;
+    margin: 0 auto;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 13px;
+    padding-top: 2px;
+    color: white;
+}
+.BlackJava .BlackTitle .form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+.BlackJava .btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.BlackJava .btn:hover {
+    background: black;
+} 
+
+.BlackJava .btn {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+.BlackJava .BlackTitle .boxShow {
+    height: 7rem !important;
+    width: 15rem !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+    margin-top: 25px !important;
+    background: none !important;
+    padding-top: 0 !important;
+    margin-left: 5rem !important;
+}
+
+.BlackJava .BlackTitle .boxShow .btn {
+    display: inline-block;
+    background: #0000003d;
+    border: none;
+}
+.BlackJava .BlackTitle .boxShow .btn:hover {
+    background: black;
+}
+.BlackJava .BlackTitle .boxShow .btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+

@@ -16,54 +16,54 @@
         <!-- Black Java Title -->
         <div class="BlackTitle">
             <h1 class="title">Black Java</h1>
+            <div id="box" class="box">
+                <form name="multiplayer" id="formblock" onsubmit="return validateForm()" method="post">
+                    <p style="font-size: 27px; margin: 0%;">Amount of players</p>
+                    <p>Play between 2 and 10 players!</p>
+                    <input type="number" value="2" id="playerNum" name="numsub" class="form-control"/>
+                    <input class="btn btn-primary" style="display: inline-block;" id="sumbitValdit" type="submit" value="Submit"/>
+                    <p style="color: red !important; "id="validator"></p>
+                </form>
 
-            <!-- left score -->
-            <p class="Playerscore1">Player 1: </p>
-            <p id="PlayerScore-1" class="ScoreP">0</p>
-            <p class="Playerscore1">Player 2: </p>
-            <p id="PlayerScore-2" class="ScoreP">0</p>
-
-            <!-- Right score -->
-            <p id="PlayerScore-4" class="ScorePRight">0</p>
-            <p class="Playerscore2">Player 4: </p>
-            <p id="PlayerScore-3" class="ScorePRight">0</p>
-            <p class="Playerscore2">Player 3: </p>
-            
+                <input class="btn btn-primary" style="display: none;" onclick="reload()" type="submit" value="Show" id="ShowPlayercount" />
+                <p style="display: none;" id="TextShow">Back to player selection</p>
+            </div>
         </div>
 
         <!-- Player's -->
         <div class="Container">
-
+        
             <!-- Button Group -->
             <div class="btn-group">
-                 <button id="restartBTN" onclick="startBlackJack()" value="start" class="btn btn-primary">Restart</button>
-                 <button onclick="hitMe()"  class="btn btn-primary curv">Hit me</button>
-                 <button onclick="stay()" class="btn btn-primary curv">Stay</button>
+                 <input type="button" disabled id="restartBTN" class="btn btn-primary" value="Start" onclick="startBlackJack()"></input>
+                 <input type="button" disabled id="hitMeBTN" class="btn btn-primary curv" value="Hit me" onclick="hitMe()"></input>
+                 <input type="button" disabled id="stayBTN" class="btn btn-primary curv" value="Stay" onclick="stay()"></input>
+            </div>
+
+            <!-- Status -->
+            <div id="status" class="box">
             </div>
 
 
+            <!-- Add players here -->
+            <div id="playerRow" class="row playerRow">
 
-            <div class="row playerRow">
-
-                <!-- Player boxes -->
-                <div class="col-3 PlayerBox">
-                    <h3 class="Display-2 playername">Player 1</h3>
-                    
-                    <!-- Player card box -->
-                    <div class="row">
-                        <div id="PlayerHand-" class="col CardBox">
-                            <img id="hand-" class="DeckImg" />
-                            <img class="DeckImg" />
-                            <img class="DeckImg" />
-                        </div>
-                    </div>
-                </div>
+                
+                
             </div>
+
+
              <!-- Deck Box -->
-              <div class="DeckBox">
+              <div style="display: none;" id="DeckBox" class="DeckBox">
                     <p id="DeckCount" class="DeckText">52</p>
              </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="/js/Black.js"></script>
 </body>
 </html>
+
+
+
+
