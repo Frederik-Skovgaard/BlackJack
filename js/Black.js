@@ -1,9 +1,14 @@
 //------------------------Varibles-----------------------//
-var symbols = ["Diamond", "Spade", "Clover", "Heart"];
-var values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
-var deck = new Array();
-var players = new Array();
-var currentPlayer = 0;
+
+//Card Varibles
+const symbols = ["Diamond", "Spade", "Clover", "Heart"];
+const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+var deck;
+var blackjack;
+
+
+//Player Varibles
+var players;
 var playerCount;
 
 
@@ -12,20 +17,31 @@ var playerCount;
 //Run's threw the arrays & puts them inside the deck array.
 function createDeck() {
     deck = new Array();
+
     var indexCounter = 0;
+
     for (var i = 0; i < values.length; i++)
     {
         for (var x = 0; x < symbols.length; x++)
         {
             var Weight = parseInt(values[i]);
             if(values[i] == "J" || values[i] == "Q" || values[i] == "K")
+            {
                 Weight = 10;
-            if(values[i] == "A")
-                Weight = 11;
+            }
 
+
+            if(values[i] == "A")
+            {
+                Weight = 11;
+            }
+                
             indexCounter++;
+            
 
             var card = {Value: values[i], Suit: symbols[x], Weight: Weight, ID: indexCounter};
+
+
             deck.push(card);
         } 
     }
@@ -34,6 +50,7 @@ function createDeck() {
 //Creates the player box for the score, name & cards 
 function createPlayerUI() {
     document.getElementById("playerRow").innerHTML = "";
+
     for(var i = 0; i < players.length; i++)
     {
         var div_playerbox = document.createElement("div");
@@ -99,8 +116,6 @@ function shuffle() {
 
         [deck[i], deck[radnomIndex]] = [deck[radnomIndex], deck[i]];
     }
-        
-    
 }
 
 //For every player deal a card
@@ -110,9 +125,31 @@ function dealHands() {
         for(var x = 0; x < players.length; x++)
         {
             var card = deck.pop();
+
+            //Yesss A my friend
+            // for(var j = 0; j < players[x].Hand.length; j++)
+            // {
+            //     if(card.Value == "A" && players[x].Hand[j] == card.Value["A"])
+            //     {
+
+            //     }
+            // }
+            
+        
             players[x].Hand.push(card);
             renderCard(card, x);
             updatePoints();
+
+            if(players[x].Points == 21)
+            {   
+                blackjack = true;
+                end();
+            }
+
+            if(players[x].Points > 21)
+            {
+                check();
+            }
         }
     }
 
@@ -121,6 +158,7 @@ function dealHands() {
 
 //Get the card image
 function getCardUI(card) {
+
     var cardImg = document.createElement("img");
     var imgPath = "/Imges/"
 
@@ -200,7 +238,7 @@ function hitMe() {
     check();
 }
 
-//If is isen't the last player remove active class and add it to the other player else end the game
+//If is it isn't the last player remove active class & add it to the nex player else end the game
 function stay() {
     if (currentPlayer != players.length-1) 
     {
@@ -216,7 +254,7 @@ function stay() {
 
 //Looks who has the closes't to 21 point's & declare them winner
 function end() {
-    var winner = -1
+    var winner = 0;
     var score = 0;
 
     for(var i = 0; i < players.length; i++)
@@ -224,16 +262,28 @@ function end() {
         if(players[i].Points > score && players[i].Points < 22)
         {
             winner = i;
+            score = players[i].Points;
         }
-
-        score = players[i].Points;
     }
 
     document.getElementById("hitMeBTN").disabled = true;
     document.getElementById("stayBTN").disabled = true;
 
-    document.getElementById("status").innerHTML = "Player " + players[winner].ID + " Won!";
-    document.getElementById("status").className = "boxWin";
+    
+    if(blackjack != true)
+    {
+        document.getElementById("status").innerHTML = "Player " + players[winner].ID + " Won!";
+        document.getElementById("status").className = "boxWin";
+    }
+    else   
+    {
+        document.getElementById("status").innerHTML = "Player " + players[winner].ID + " Got Black Jack!";
+        document.getElementById("status").className = "boxBlack";
+        blackjack = false;
+    }
+    
+
+    
 }
 
 //Takes the player's cards weight(value) and returns them
@@ -245,16 +295,6 @@ function getPoints(player) {
     }
     players[player].Points = points;
     return points;
-}
-
-//Change the score in the player box
-function updatePoints()
-{
-    for(var i = 0; i < players.length; i++)
-    {
-        getPoints(i);
-        document.getElementById("Score-" + i).innerHTML = players[i].Points;
-    }
 }
 
 //Validation
@@ -285,7 +325,17 @@ function validateForm() {
     }
 }
 
-
+//Check if any of the players have over 21 points if so declare them losser
+function check() {
+    if (players[currentPlayer].Points > 21)
+    {
+        document.getElementById("status").innerHTML = "Player " + players[currentPlayer].ID + " Lost";
+        document.getElementById("status").className = "boxLoss";
+        
+        document.getElementById("hitMeBTN").disabled = true;
+        document.getElementById("stayBTN").disabled = true;
+    }
+}
 
 //------------------------Functions-But-Not-Interesting-----------------------//
 
@@ -294,8 +344,19 @@ function updateDeck() {
     document.getElementById("DeckCount").innerHTML = deck.length;
 }
 
+//Change the score in the player box
+function updatePoints()
+{
+    for(var i = 0; i < players.length; i++)
+    {
+        getPoints(i);
+        document.getElementById("Score-" + i).innerHTML = players[i].Points;
+    }
+}
+
 //Create the card
 function renderCard(card, player) {
+
     var hand = document.getElementById("PlayerHand-" + player);
     hand.appendChild(getCardUI(card));
 }
@@ -309,18 +370,6 @@ function createPlayer(num) {
         var player = {Name: "Player " + i, ID: i, Points: 0, Hand: hand};
         players.push(player);
 
-    }
-}
-
-//Check if any of the players have over 21 points if so declare them losser
-function check() {
-    if (players[currentPlayer].Points > 21)
-    {
-        document.getElementById("status").innerHTML = "Player " + players[currentPlayer].ID + " Lost";
-        document.getElementById("status").className = "boxLoss";
-        
-        document.getElementById("hitMeBTN").disabled = true;
-        document.getElementById("stayBTN").disabled = true;
     }
 }
 
